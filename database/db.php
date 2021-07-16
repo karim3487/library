@@ -125,6 +125,7 @@ class Library
         $query = $pdo->prepare($sql);
         $query->execute();
         $this->dbCheckError($query);
+        return $query->fetchAll();
     }
 }
 
