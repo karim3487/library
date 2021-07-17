@@ -20,9 +20,6 @@ $book = $upBook->selectOne("books", $book_id);
     <form action="../crud/forBooks/upBook.php" method="post">
         <h3>Изменение книги</h3>
         <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
-        <input type="hidden" name="id_author" value="<?= $_GET['id_author'] ?>">
-        <p>Автор</p>
-        <input type="text" name="author" value="<?= $_GET['author'] ?>">
         <p>Книга</p>
         <input type="text" name="name" value="<?= $book['name'] ?>">
         <p>страниц</p>

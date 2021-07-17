@@ -7,6 +7,10 @@ $nameBook = $book->selectOne("books", $book_id);
 $readers = new Library();
 $humans = $readers->selectAll("readers");
 
+$today = date("Y-m-d");
+
+$finishDate = date("Y-m-d", strtotime($today. '+ 30 day'));
+
 
 echo "Книга: " . $nameBook['name'];
 ?>
@@ -24,9 +28,9 @@ echo "Книга: " . $nameBook['name'];
         ?>
     </select>
     <p>Дата выдачи:</p>
-    <input type="date" name="start">
+    <input type="date" name="start" value="<?= $today?>">
     <p>Дата сдачи:</p>
-    <input type="date" name="finish">
+    <input type="date" name="finish" value="<?= $finishDate?>">
     <br><br>
     <button type="submit">Выдать</button>
 </form>
